@@ -12,12 +12,11 @@ async function getResponse(query) {
 
     // console.log(process.env.PRIVATE_KEY, process.env.CLIENT_EMAIL)
 
-    let pKey = process.env.PRIVATE_KEY.toString();
-    console.log(pKey)
+
 
     const sessionClient = new dialogflow.SessionsClient({
         credentials: {
-            private_key: pKey,
+            private_key: process.env.PRIVATE_KEY,
             client_email: process.env.CLIENT_EMAIL,
         },
     });
