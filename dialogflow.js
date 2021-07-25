@@ -10,7 +10,13 @@ async function getResponse(query) {
 
     const languageCode = 'en';
 
-    const sessionClient = new dialogflow.SessionsClient();
+
+    const sessionClient = new dialogflow.SessionsClient({
+        credentials: {
+            private_key: process.env.PRIVATE_KEY,
+            client_email: process.env.CLIENT_EMAIL,
+        },
+    });
 
     async function detectIntent(
         projectId,
