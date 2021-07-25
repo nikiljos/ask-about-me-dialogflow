@@ -8,6 +8,16 @@
     <style>
         .form-div {
             margin-top: 20px;
+            text-align: center;
+        }
+        
+        .body-center {
+            position: absolute;
+            margin: auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 25px;
         }
     </style>
 
@@ -15,17 +25,19 @@
 </head>
 
 <body>
-    <div class="text-center mb-4 form-div">
-        <form action="/" method="post">
-            <div class="form-group">
-                <input type="text" name='query' id="query" class="mb-4" placeholder="Ask Anything about me">
-                <button type="submit" class="btn btn-primary mb-2">Ask</button>
+    <div class="text-center mb-4 form-div body-center">
+        <form action="/" method="post" class="form-inline">
+            <div class="form-group mx-sm-3 mb-2">
+                <input type="text" name='query' id="query" class="form-control " placeholder="Ask Anything about me" required>
+
             </div>
+            <button type="submit" class="btn btn-primary mb-2">Ask</button>
 
 
         </form>
         <%= reply %>
     </div>
+    <script async src="https://cdn.splitbee.io/sb.js"></script>
 </body>
 
 </html>
