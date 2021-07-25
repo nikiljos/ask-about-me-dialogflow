@@ -10,6 +10,8 @@ async function getResponse(query) {
 
     const languageCode = 'en';
 
+    console.log(process.env.PRIVATE_KEY, process.env.CLIENT_EMAIL)
+
 
     const sessionClient = new dialogflow.SessionsClient({
         credentials: {
