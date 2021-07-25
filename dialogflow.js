@@ -10,12 +10,14 @@ async function getResponse(query) {
 
     const languageCode = 'en';
 
-    console.log(process.env.PRIVATE_KEY, process.env.CLIENT_EMAIL)
+    // console.log(process.env.PRIVATE_KEY, process.env.CLIENT_EMAIL)
 
+    let pKey = process.env.PRIVATE_KEY.toString();
+    console.log(pKey)
 
     const sessionClient = new dialogflow.SessionsClient({
         credentials: {
-            private_key: process.env.PRIVATE_KEY,
+            private_key: pKey,
             client_email: process.env.CLIENT_EMAIL,
         },
     });
